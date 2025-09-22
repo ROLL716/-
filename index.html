@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>目標管理アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 達成度メーター -->
+    <div class="meter-section">
+      <label for="achievement-meter" style="font-weight:bold;">達成度</label>
+      <progress id="achievement-meter" value="50" max="100" style="width:100%;height:24px;"></progress>
+    </div>
+    <!-- ページボタン -->
+    <div class="page-buttons">
+      <button onclick="location.href='meal.html'">食事・睡眠</button>
+      <button onclick="location.href='goal.html'">目標</button>
+      <button onclick="location.href='consult.html'">相談</button>
+      <button onclick="location.href='user.html'">ユーザー設定</button>
+      <button onclick="location.href='sns.html'">SNS</button>
+      <button onclick="location.href='diary.html'">日誌</button>
+    </div>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
