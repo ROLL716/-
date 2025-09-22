@@ -1,3 +1,419 @@
+/* 今までの目標ボタン右下配置 */
+.history-goal-btn {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  padding: 16px 28px;
+  font-size: 1.1em;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+.history-goal-btn:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
+/* 目標履歴モーダル */
+.goal-history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.goal-history-content {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+}
+.goal-history-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 18px;
+}
+.goal-history-list {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.goal-history-list li {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 8px;
+  background: #f7f7f7;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.goal-history-close {
+  padding: 8px 24px;
+  font-size: 1em;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.goal-history-close:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
+/* 今日の目標入力欄（上部） */
+.goal-top-section {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+.goal-input {
+  width: 60vw;
+  max-width: 600px;
+  font-size: 1.5em;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f7f7f7;
+  color: #333;
+  font-weight: bold;
+  opacity: 0.7;
+}
+/* ToDoリスト画面いっぱい配置 */
+.todo-full-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 0;
+  padding: 32px 0 80px 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+.todo-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 24px;
+}
+.todo-list {
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  padding: 0;
+  list-style: none;
+}
+.todo-list li {
+  margin-bottom: 12px;
+}
+.todo-input {
+  width: 95%;
+  font-size: 1.2em;
+  padding: 12px 16px;
+  border: 1px solid #b6c6e6;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+.add-todo-btn {
+  padding: 12px 32px;
+  font-size: 1.1em;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.2s, color 0.2s;
+}
+.add-todo-btn:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
+/* ToDo追加モーダル */
+.todo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.todo-modal-content {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-todo-input {
+  width: 260px;
+  font-size: 1.1em;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #b6c6e6;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+.modal-add-btn, .modal-cancel-btn {
+  padding: 8px 24px;
+  font-size: 1em;
+  margin: 0 8px;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-add-btn:hover, .modal-cancel-btn:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
+/* ToDo追加モーダル */
+.todo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.todo-modal-content {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-todo-input {
+  width: 260px;
+  font-size: 1.1em;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #b6c6e6;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+.modal-add-btn, .modal-cancel-btn {
+  padding: 8px 24px;
+  font-size: 1em;
+  margin: 0 8px;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-add-btn:hover, .modal-cancel-btn:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
+/* 目標とToDoリストの隙間をなくすラップ */
+.goal-todo-wrap {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.goal-top-section {
+  margin-bottom: 0;
+}
+.todo-full-section {
+  margin-top: 0;
+}
+/* ToDoリスト画面いっぱい配置 */
+.todo-full-section {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 60vh;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 0;
+  padding: 32px 0 80px 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+.todo-full-section .todo-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 24px;
+}
+.todo-list {
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  padding: 0;
+  list-style: none;
+}
+.todo-list li {
+  margin-bottom: 12px;
+}
+.todo-input {
+  width: 95%;
+  font-size: 1.2em;
+  padding: 12px 16px;
+  border: 1px solid #b6c6e6;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+.add-todo-btn {
+  padding: 12px 32px;
+  font-size: 1.1em;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.2s, color 0.2s;
+}
+.add-todo-btn:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
+/* 画面上部の目標入力欄 */
+.goal-top-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  background: #e3eafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.goal-input {
+  width: 60vw;
+  max-width: 600px;
+  font-size: 1.5em;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f7f7f7;
+  color: #333;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+/* ToDoリスト左下配置 */
+.todo-section {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  width: 260px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 18px 16px 16px 16px;
+  z-index: 10;
+}
+.todo-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.todo-list li {
+  margin-bottom: 6px;
+}
+.todo-input {
+  width: 90%;
+  padding: 6px 8px;
+  border: 1px solid #b6c6e6;
+  border-radius: 4px;
+  font-size: 1em;
+  background: #f7f7f7;
+}
+
+/* 今までの目標ボタン右下配置 */
+.history-goal-btn {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  padding: 16px 28px;
+  font-size: 1.1em;
+  background: #e3eafc;
+  color: #1a237e;
+  border: 1px solid #b6c6e6;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+.history-goal-btn:hover {
+  background: #b6c6e6;
+  color: #0d1333;
+}
 body {
   font-family: 'Segoe UI', 'Meiryo', sans-serif;
   background: #f7f7f7;
