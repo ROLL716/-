@@ -9,7 +9,32 @@
 <body>
   <div class="container">
     <h1>ユーザー設定ページ</h1>
-    <p>ここにユーザー情報の編集機能を追加できます。</p>
+    <form id="user-settings-form" style="margin-bottom:24px;">
+      <div style="margin-bottom:12px;">
+        <label for="icon">アイコン画像：</label>
+        <input type="file" id="icon" name="icon" accept="image/*">
+        <img id="icon-preview" src="" alt="アイコンプレビュー" style="display:none;width:64px;height:64px;border-radius:50%;margin-top:8px;object-fit:cover;">
+      </div>
+      <div style="margin-bottom:12px;">
+        <label for="username">ユーザーネーム：</label>
+        <input type="text" id="username" name="username" placeholder="ユーザーネームを入力" required>
+      </div>
+      <div style="margin-bottom:12px;">
+        <label for="today-goal">今日の目標：</label>
+        <input type="text" id="today-goal" name="today-goal" placeholder="今日の目標（短く）" maxlength="30" required>
+      </div>
+      <div style="margin-bottom:12px;">
+        <label for="hashtags">ハッシュタグ：</label>
+        <input type="text" id="hashtags" name="hashtags" placeholder="#健康 #勉強 など">
+      </div>
+      <div style="margin-bottom:12px;">
+        <label for="share-toggle">全体に共有：</label>
+        <input type="checkbox" id="share-toggle" name="share-toggle">
+        <span id="share-status">OFF</span>
+      </div>
+      <button type="submit">保存</button>
+    </form>
+    <div id="summary" style="background:#f8f8f8;padding:12px;border-radius:8px;display:none;"></div>
     <a href="index.html">トップに戻る</a>
   </div>
 </body>
